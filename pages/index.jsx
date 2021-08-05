@@ -30,7 +30,11 @@ export default function Home(initialData) {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Giphy Search App</title>
+        <meta
+          name="description"
+          content="Love giphys? We do too. Use our advanced giphy search to find the perfect giphy for any occasion."
+        ></meta>
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="/styles.css" />
       </Head>
