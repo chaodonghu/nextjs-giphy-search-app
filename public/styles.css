@@ -5,8 +5,8 @@ body {
 }
 
 .container {
-  margin: auto;
   max-width: 1200px;
+  margin: auto;
   padding: 0px 40px;
 }
 
@@ -21,9 +21,9 @@ img {
 
 form {
   display: grid;
-  grid-gap: 30px;
   grid-template-columns: 5fr 1fr;
-  heigth: 40px;
+  grid-gap: 30px;
+  height: 40px;
 }
 
 button {
@@ -31,6 +31,7 @@ button {
   color: white;
   border-radius: 10px;
   border: 0px;
+  cursor: pointer;
 }
 
 button:focus {

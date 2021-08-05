@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export async function getStaticProps() {
   let catGiphys = await fetch(
@@ -9,18 +9,27 @@ export async function getStaticProps() {
   return { props: { catGiphys: catGiphys } };
 }
 const About = (props) => {
+  const [formInputs, setFormInputs] = useState();
+  const [searchResults, setSearchResults] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("cats");
+
   useEffect(() => {
-    console.log("props", props);
-  });
+    setSearchResults(props.catGiphys.data);
+  }, [props]);
 
   const handleInputs = (event) => {
-    console.log(event.target.value);
-    console.log(event.target.name);
+    let { name, value } = event.target;
+    setFormInputs({ ...formInputs, [name]: value });
   };
 
-  const search = (event) => {
+  const search = async (event) => {
     event.preventDefault();
-    console.log(formInputs.searchTerm);
+    let giphys = await fetch(
+      `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=MBIWS7egmUvQexSSBnZHyvytFdKcsx7l&limit=10`
+    );
+    giphys = await giphys.json();
+    setSearchResults(giphys.data);
+    setSearchTerm(formInputs.searchTerm);
   };
 
   return (
@@ -37,7 +46,8 @@ const About = (props) => {
         <button>Search</button>
       </form>
 
-      {props.catGiphys.data.map((each, index) => {
+      <h1>Search results for: {searchTerm}</h1>
+      {searchResults.map((each, index) => {
         return (
           <div key={each.id} className="giphy-search-results-grid">
             <h3>{each.title}</h3>
