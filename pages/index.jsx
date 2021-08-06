@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Footer from "../components/Footer";
 
 export default function Home(initialData) {
@@ -56,7 +57,7 @@ export default function Home(initialData) {
           return (
             <div key={index}>
               <h3>{each.title}</h3>
-              <img src={each.images.original.url} alt={each.title} />
+              <Image src={each.images.original.url} alt={each.title} />
             </div>
           );
         })}

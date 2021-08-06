@@ -25,8 +25,8 @@ export default function About() {
         </p>
 
         <p>
-          The old saying "a picture is worth a thousand words" is quite cliche.
-          But that doesn't make it any less true, especially in marketing and
+          The old saying a picture is worth a thousand words is quite cliche.
+          But that doesnt make it any less true, especially in marketing and
           particularly in the instant-gratification, short attention span world
           we live in today. Getting folks to retain (or even register) your
           messages and content or take action is harder than ever, especially if
@@ -36,7 +36,7 @@ export default function About() {
         <p>
           Images are stronger than words. However, the fast-moving nature of
           GIFs make them stronger than images and their shorter length make them
-          more digestible than video. That's the short answer.
+          more digestible than video. That is the short answer.
         </p>
       </div>
       <Footer />
